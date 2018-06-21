@@ -23,6 +23,7 @@
 #include <memory>
 #include <vector>
 
+#include <grpc/grpc_security_constants.h>
 #include <grpcpp/impl/codegen/grpc_library.h>
 #include <grpcpp/security/auth_context.h>
 #include <grpcpp/support/status.h>
@@ -106,6 +107,9 @@ struct SslCredentialsOptions {
   /// This parameter can be empty if the client does not have a certificate
   /// chain.
   grpc::string pem_cert_chain;
+
+  /// Specifies if server certification verification should be disabled or not
+  grpc_ssl_server_certificate_request_type server_certificate_request;
 };
 
 // Factories for building different types of Credentials The functions may

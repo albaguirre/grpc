@@ -140,6 +140,10 @@ typedef struct {
   size_t num_alpn_protocols;
   /* ssl_session_cache is a cache for reusable client-side sessions. */
   tsi_ssl_session_cache* session_cache;
+
+  /* server_certificate_request, if set to TSI_REQUEST_SERVER_CERTIFICATE_BUT_DONT_VERIFY
+   * it will ignore any certificate verification errors */
+  tsi_server_certificate_request_type server_certificate_request;
 } tsi_ssl_client_handshaker_options;
 
 /* Creates a client handshaker factory.

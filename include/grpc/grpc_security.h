@@ -178,6 +178,10 @@ GRPCAPI grpc_channel_credentials* grpc_ssl_credentials_create(
     const char* pem_root_certs, grpc_ssl_pem_key_cert_pair* pem_key_cert_pair,
     void* reserved);
 
+GRPCAPI grpc_channel_credentials* grpc_ssl_credentials_create_with_request_type(
+    const char* pem_root_certs, grpc_ssl_pem_key_cert_pair* pem_key_cert_pair,
+    grpc_ssl_server_certificate_request_type type);
+
 /** --- grpc_call_credentials object.
 
    A call credentials object represents a way to authenticate on a particular

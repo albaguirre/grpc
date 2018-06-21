@@ -193,6 +193,7 @@ grpc_server_security_connector* grpc_fake_server_security_connector_create(
 typedef struct {
   tsi_ssl_pem_key_cert_pair* pem_key_cert_pair;
   char* pem_root_certs;
+  tsi_server_certificate_request_type server_request_type;
 } grpc_ssl_config;
 
 /* Creates an SSL channel_security_connector.

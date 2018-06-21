@@ -1056,6 +1056,7 @@ grpc_security_status grpc_ssl_channel_security_connector_create(
   }
   options.cipher_suites = ssl_cipher_suites();
   options.session_cache = ssl_session_cache;
+  options.server_certificate_request = config->server_request_type;
   result = tsi_create_ssl_client_handshaker_factory_with_options(
       &options, &c->client_handshaker_factory);
   if (result != TSI_OK) {
