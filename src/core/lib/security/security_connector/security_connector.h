@@ -194,6 +194,7 @@ typedef struct {
   tsi_ssl_pem_key_cert_pair* pem_key_cert_pair;
   char* pem_root_certs;
   verify_peer_options verify_options;
+  tsi_server_certificate_request_type server_request_type;
 } grpc_ssl_config;
 
 /* Creates an SSL channel_security_connector.
