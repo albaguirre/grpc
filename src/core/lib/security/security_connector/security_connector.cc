@@ -1019,7 +1019,7 @@ grpc_security_status grpc_ssl_channel_security_connector_create(
     gpr_log(GPR_ERROR, "An ssl channel needs a config and a target name.");
     goto error;
   }
-  if (config->pem_root_certs == nullptr) {
+  if (config->pem_root_certs == nullptr && config->server_request_type == TSI_REQUEST_SERVER_CERTIFICATE_AND_VERIFY ) {
     // Use default root certificates.
     options.pem_root_certs = grpc_core::DefaultSslRootStore::GetPemRootCerts();
     options.root_store = grpc_core::DefaultSslRootStore::GetRootStore();
